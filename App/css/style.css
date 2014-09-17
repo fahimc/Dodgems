@@ -1,0 +1,25 @@
+#playground
+{
+	display: block;
+	position: relative;
+	height: 80%;
+	width: 100%;
+}
+.player
+{
+	display: block;
+	background-color: #e4e4e4;
+	width:30px;
+	height:30px;
+	position: absolute;
+	border: 1px solid #333;
+	-webkit-transition:top 1s, left 1s;
+	transition:left 2s, top 1s;
+	border-radius: 50%;
+}
+.player p
+{
+	margin-top: -20px;
+	margin-left: 20px;
+	font-weight: bold;
+}

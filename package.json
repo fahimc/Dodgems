@@ -1,0 +1,26 @@
+{
+  "name": "Game",
+  "description": "Game",
+  "version": "0.0.1-2",
+  "subdomain": "dodgem-app",
+  "scripts": {
+    "predeploy": "echo This will be run before deploying the app",
+    "postdeploy": "echo This will be run after deploying the app",
+    "start": "Server.js"
+  },
+  "engines": {
+    "node": "0.6.x"
+  },
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-requirejs": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-watch ": "*",
+    "grunt-contrib-connect ": "*",
+    "grunt-contrib-less ": "*",
+    "nodejs-websocket": "1.0.0"
+  },
+  "bundleDependencies": [
+    "nodejs-websocket"
+  ]
+}
