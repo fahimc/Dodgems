@@ -13,7 +13,7 @@ var Main = {
     this.addEvents();
   },
   createSocket:function(){
-   this.connection = new WebSocket('ws://apps.m8e.co.uk:8001');
+   this.connection = new window.WebSocket('ws://apps.m8e.co.uk:8001');
    this.connection.onopen = this.onOpen.bind(this);
    this.connection.onmessage = this.onMessage.bind(this);
  },
