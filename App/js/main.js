@@ -1,5 +1,6 @@
 var Main = {
   connection:null,
+  stage:null,
   id:null,
   playersCollection:null,
   players:[],
@@ -11,6 +12,12 @@ var Main = {
   onLoad:function(){
     this.createSocket();
     this.addEvents();
+    this.createCanvas();
+  },
+  createCanvas:function()
+  {
+     this.stage = new createjs.Stage("playgroundCanvas");
+
   },
   createSocket:function(){
    this.connection = new window.WebSocket('ws://apps.m8e.co.uk:8001');
@@ -40,38 +47,7 @@ onRightPressed:function(){
   this.x+=10;
   this.connection.send(JSON.stringify({type:"broadcast",data:[this.x,this.y]}));
 },
-onOpen:function(){
 
-  var data ={type:"newPlayer",username:Math.random().toString(36).substring(7)};
-
-  this.connection.send(JSON.stringify(data));
-
-  //setInterval(this.test.bind(this),1000);
-},
-test:function(){
-  var min = 0;
-  var max = 500;
-  var x = Math.floor(Math.random() * (max - min + 1)) + min;
-  var y = Math.floor(Math.random() * (max - min + 1)) + min;
-
-  this.connection.send(JSON.stringify({type:"broadcast",data:[x,y]}));
-},
-onMessage:function(event){
- var data = JSON.parse(event.data);
- switch(data.type){
-  case "ID":
-  this.id = data.id;
-  break;
-  case "message":
-  this.movePlayer(data.data,data.senderId);
-  break;
-  case "update":
-  this.playersCollection=data.players;
-  this.createPlayers();
-  this.removePlayers();
-  break;
-}
-},
 onClose:function(){
 
 },
