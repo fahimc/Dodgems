@@ -18,7 +18,9 @@
     "grunt-contrib-watch ": "*",
     "grunt-contrib-connect ": "*",
     "grunt-contrib-less ": "*",
-    "nodejs-websocket": "1.0.0"
+    "nodejs-websocket": "1.0.0",
+    "express": "*",
+    "socket.io":"*"
   },
   "bundleDependencies": [
     "nodejs-websocket"
