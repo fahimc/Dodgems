@@ -68,13 +68,21 @@ var Main = {
   },
   addEvents: function() {
     document.getElementById('upButton').addEventListener('mousedown', this.onUpPressed.bind(this));
+    document.getElementById('upButton').addEventListener('touchstart', this.onUpPressed.bind(this));
     document.getElementById('upButton').addEventListener('mouseup', this.onMouseUp.bind(this));
+    document.getElementById('upButton').addEventListener('touchend', this.onMouseUp.bind(this));
     document.getElementById('downButton').addEventListener('mousedown', this.onDownPressed.bind(this));
+    document.getElementById('downButton').addEventListener('touchstart', this.onDownPressed.bind(this));
     document.getElementById('downButton').addEventListener('mouseup', this.onMouseUp.bind(this));
+    document.getElementById('downButton').addEventListener('touchend', this.onMouseUp.bind(this));
     document.getElementById('leftButton').addEventListener('mouseup', this.onMouseUp.bind(this));
+    document.getElementById('leftButton').addEventListener('touchend', this.onMouseUp.bind(this));
     document.getElementById('leftButton').addEventListener('mousedown', this.onLeftPressed.bind(this));
+    document.getElementById('leftButton').addEventListener('touchstart', this.onLeftPressed.bind(this));
     document.getElementById('rightButton').addEventListener('mousedown', this.onRightPressed.bind(this));
+    document.getElementById('rightButton').addEventListener('touchstart', this.onRightPressed.bind(this));
     document.getElementById('rightButton').addEventListener('mouseup', this.onMouseUp.bind(this));
+    document.getElementById('rightButton').addEventListener('touchend', this.onMouseUp.bind(this));
 
     window.addEventListener('resize', this.resizeCanvas, false);
   },
