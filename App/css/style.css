@@ -1,25 +1,61 @@
-#playground
-{
-	display: block;
-	position: relative;
-	height: 80%;
-	width: 100%;
+html, body {
+    height: 100%;
+    width: 100%;
 }
-.player
-{
-	display: block;
-	background-color: #e4e4e4;
-	width:30px;
-	height:30px;
-	position: absolute;
-	border: 1px solid #333;
-	-webkit-transition:top 1s, left 1s;
-	transition:left 2s, top 1s;
-	border-radius: 50%;
+#playground {
+    display: block;
+    position: relative;
+    height: 80%;
+    width: 100%;
 }
-.player p
-{
-	margin-top: -20px;
-	margin-left: 20px;
-	font-weight: bold;
+.player {
+    display: block;
+    background-color: #e4e4e4;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    border: 1px solid #333;
+    -webkit-transition: top 1s, left 1s;
+    transition: left 2s, top 1s;
+    border-radius: 50%;
+}
+.player p {
+    margin-top: -20px;
+    margin-left: 20px;
+    font-weight: bold;
+}
+button {
+    background-color: #333;
+    border-radius: 50%;
+    width: 30%;
+    height: 30%;
+    border: 0;
+    color:#e4e4e4;
+}
+.controls {
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    width: 200px;
+    height: 200px;
+}
+#upButton {
+    position: absolute;
+    left: 30%;
+    top: 0;
+}
+#downButton {
+    position: absolute;
+    left: 30%;
+    top: 60%;
+}
+#leftButton {
+    position: absolute;
+    left: 0px;
+    top: 30%;
+}
+#rightButton {
+    position: absolute;
+    left: 60%;
+    top: 30%;
 }
