@@ -67,22 +67,22 @@ var Main = {
 
   },
   addEvents: function() {
-    document.getElementById('upButton').addEventListener('mousedown', this.onUpPressed.bind(this));
-    document.getElementById('upButton').addEventListener('touchstart', this.onUpPressed.bind(this));
-    document.getElementById('upButton').addEventListener('mouseup', this.onMouseUp.bind(this));
-    document.getElementById('upButton').addEventListener('touchend', this.onMouseUp.bind(this));
-    document.getElementById('downButton').addEventListener('mousedown', this.onDownPressed.bind(this));
-    document.getElementById('downButton').addEventListener('touchstart', this.onDownPressed.bind(this));
-    document.getElementById('downButton').addEventListener('mouseup', this.onMouseUp.bind(this));
-    document.getElementById('downButton').addEventListener('touchend', this.onMouseUp.bind(this));
-    document.getElementById('leftButton').addEventListener('mouseup', this.onMouseUp.bind(this));
-    document.getElementById('leftButton').addEventListener('touchend', this.onMouseUp.bind(this));
-    document.getElementById('leftButton').addEventListener('mousedown', this.onLeftPressed.bind(this));
-    document.getElementById('leftButton').addEventListener('touchstart', this.onLeftPressed.bind(this));
-    document.getElementById('rightButton').addEventListener('mousedown', this.onRightPressed.bind(this));
-    document.getElementById('rightButton').addEventListener('touchstart', this.onRightPressed.bind(this));
-    document.getElementById('rightButton').addEventListener('mouseup', this.onMouseUp.bind(this));
-    document.getElementById('rightButton').addEventListener('touchend', this.onMouseUp.bind(this));
+    document.getElementById('upButton').addEventListener('mousedown', this.onUpPressed.bind(this), false);
+    document.getElementById('downButton').addEventListener('mousedown', this.onDownPressed.bind(this), false);
+    document.getElementById('leftButton').addEventListener('mousedown', this.onLeftPressed.bind(this), false);
+    document.getElementById('rightButton').addEventListener('mousedown', this.onRightPressed.bind(this), false);
+    document.getElementById('upButton').addEventListener('touchstart', this.onUpPressed.bind(this), false);
+    document.getElementById('downButton').addEventListener('touchstart', this.onDownPressed.bind(this), false);
+    document.getElementById('leftButton').addEventListener('touchstart', this.onLeftPressed.bind(this), false);
+    document.getElementById('rightButton').addEventListener('touchstart', this.onRightPressed.bind(this), false);
+    document.getElementById('upButton').addEventListener('mouseup', this.onMouseUp.bind(this), false);
+    document.getElementById('downButton').addEventListener('mouseup', this.onMouseUp.bind(this), false);
+    document.getElementById('leftButton').addEventListener('mouseup', this.onMouseUp.bind(this), false);
+    document.getElementById('rightButton').addEventListener('mouseup', this.onMouseUp.bind(this), false);
+    document.getElementById('upButton').addEventListener('touchend', this.onMouseUp.bind(this), false);
+    document.getElementById('downButton').addEventListener('touchend', this.onMouseUp.bind(this), false);
+    document.getElementById('leftButton').addEventListener('touchend', this.onMouseUp.bind(this), false);
+    document.getElementById('rightButton').addEventListener('touchend', this.onMouseUp.bind(this), false);
 
     window.addEventListener('resize', this.resizeCanvas, false);
   },
@@ -196,7 +196,7 @@ createPlayers: function() {
         //   playground.appendChild(player);
         this.players[id] = player;
       }
-      if (this.playersCollection[id].name) this.players[id].getChildByName('username').text = this.playersCollection[id].name;
+      if (this.playersCollection[id].name) if(this.players[id])this.players[id].getChildByName('username').text = this.playersCollection[id].name;
       // console.log(this.playersCollection[id]);
       if (this.playersCollection[id].position) {
         this.movePlayer(this.playersCollection[id].position, id);
